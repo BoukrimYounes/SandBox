@@ -1,0 +1,51 @@
+@use "./root" as *;
+
+.customers {
+  text-align: center;
+  margin-top: -5px;
+  padding-block: 3rem;
+  background: linear-gradient(0deg, #f7f7f7 0%, #f0f8fe 100%);
+  .container {
+    width: 90%;
+    margin-inline: auto;
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      @include lg() {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include md() {
+        grid-template-columns: 1fr;
+      }
+      .testimonial {
+        background-color: $white-color;
+        height: fit-content;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: justify;
+        box-shadow: 2px 2px 10px -3px rgba(0, 0, 0, 0.2);
+        p {
+          font-size: 18px;
+        }
+        .img-test {
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            .name-testimonial {
+              font-size: 19px;
+              color: $black-color;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+}

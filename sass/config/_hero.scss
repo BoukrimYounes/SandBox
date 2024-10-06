@@ -1,0 +1,75 @@
+@use "./root" as *;
+
+.hero {
+  width: 95%;
+  margin-inline: auto;
+  padding-block: 3rem;
+  @include lg() {
+    padding-block: 2rem;
+    text-align: center;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include lg() {
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+    .left {
+      width: 40%;
+      @include lg() {
+        width: 100%;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      p {
+        @include lg() {
+          text-align: center;
+        }
+      }
+      .title-hero {
+        font-size: 54px;
+        font-weight: 600;
+        color: $black-color;
+        span {
+          color: $blue-color;
+        }
+        @include lg() {
+          text-align: center;
+        }
+        @include lg() {
+          font-size: 38px;
+        }
+      }
+      #btn-blue {
+        @include md() {
+          margin-inline: auto;
+        }
+        @include transition();
+        @include transform();
+      }
+    }
+    .right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include lg() {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .p-center {
+    margin-top: 2rem;
+    text-align: center;
+  }
+}

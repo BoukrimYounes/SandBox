@@ -1,0 +1,75 @@
+@use "./root" as *;
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  a {
+    img {
+      width: 150px;
+      height: 80px;
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include lg() {
+      gap: 15px;
+    }
+    @include md() {
+      position: absolute;
+      flex-direction: column;
+      background: #000000bf;
+      width: 50%;
+      padding: 1rem 0;
+      top: 65px;
+      right: 0;
+      border-radius: 5px;
+      display: none;
+      &.block {
+        display: flex;
+      }
+      &::after {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: -10px;
+        right: 6px;
+        border-style: solid;
+        border-width: 0px 10px 10px 10px;
+        border-color: transparent transparent rgba(0, 0, 0, 0.7490196078)
+          transparent;
+      }
+    }
+    @include sm() {
+      width: 100%;
+    }
+    li {
+      @include transition();
+      @include transform();
+      &:last-child {
+        margin-left: 10px;
+      }
+      a {
+        color: $black-color;
+        @include md() {
+          color: $white-color;
+        }
+      }
+    }
+  }
+  .menu {
+    display: none;
+    @include md() {
+      display: block;
+      color: #3e485a;
+      cursor: pointer;
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+}

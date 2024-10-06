@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Urbanist", sans-serif;
+  text-decoration: none;
+}
+
+$white-color: #ffffff;
+$blue-color: #5eb9f0;
+$fontColor-color: #60697b;
+$black-color: #343f52;
+$lg: 1024px;
+$md: 768px;
+$sm: 640px;
+
+body {
+  font-size: 17px;
+  color: $fontColor-color;
+}
+
+@mixin lg {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+p {
+  font-size: 17px;
+  font-weight: 500;
+  @include md() {
+    font-size: 16px;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 96rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @include sm() {
+    padding-inline: 0.5rem;
+  }
+}
+
+.small-title {
+  color: $blue-color;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.main-title {
+  color: $black-color;
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 4rem;
+
+  @include md() {
+    font-size: 32px;
+  }
+}
+
+#btn-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $blue-color;
+  font-size: 17px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: $white-color;
+}
+
+@mixin transition {
+  transition: 0.3s all ease-out;
+}
+
+@mixin transform {
+  &:hover {
+    transform: scale(0.95, 0.95);
+  }
+}

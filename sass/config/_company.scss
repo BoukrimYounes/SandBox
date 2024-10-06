@@ -1,0 +1,116 @@
+@use "./root" as *;
+
+.company {
+  width: 95%;
+  margin-inline: auto;
+  padding-block: 3rem;
+  .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
+    @include lg() {
+      flex-direction: column;
+    }
+    .left {
+      width: 35%;
+      @include lg() {
+        width: 100%;
+      }
+      .main-title {
+        margin-bottom: 2rem;
+      }
+    }
+    .right {
+      width: 50%;
+      @include lg() {
+        width: 100%;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 30px;
+      @include md() {
+        width: 100%;
+      }
+      @include sm() {
+        flex-wrap: wrap;
+      }
+      .column {
+        text-align: center;
+        i {
+          width: 60px;
+          height: 60px;
+          background: #e5f4fd;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          font-size: 20px;
+          font-weight: 900;
+          color: $blue-color;
+          margin-bottom: 15px;
+        }
+        .num {
+          font-size: 42px;
+          font-weight: 600;
+          color: $black-color;
+        }
+      }
+    }
+  }
+  .bottom {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    @include lg() {
+      grid-template-columns: repeat(2, 1fr);
+      // margin-left: 20px;
+    }
+    @include sm() {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .cart-person {
+      // width: fit-content;
+      height: fit-content;
+      padding: 25px 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 2px 2px 10px -3px rgba(0, 0, 0, 0.2);
+      img {
+        width: 70px;
+        margin-top: 10px;
+      }
+      .name-person {
+        font-size: 20px;
+        font-weight: 600;
+        color: $black-color;
+        margin-bottom: 5px;
+      }
+      .description {
+        font-size: 12px;
+        font-weight: 600;
+        color: #aab0bc;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+      .social {
+        margin-top: 15px;
+        i {
+          font-size: 20px;
+          margin-left: 5px;
+          &:nth-child(1) {
+            color: black;
+          }
+          &:nth-child(2) {
+            color: #e94d88;
+          }
+          &:nth-child(3) {
+            color: #316ff6;
+          }
+        }
+      }
+    }
+  }
+}

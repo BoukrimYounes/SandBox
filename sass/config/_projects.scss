@@ -1,0 +1,47 @@
+@use "./root" as *;
+
+.projects {
+  .container {
+    width: 95%;
+    padding-top: 2rem;
+    margin-inline: auto;
+    text-align: center;
+    .swiper-wrapper {
+      margin-bottom: 3rem;
+      .swiper-slide {
+        width: 61rem;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 2px 2px 10px -3px rgba(0, 0, 0, 0.2);
+        div {
+          width: 100%;
+          height: 20rem;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .name-person {
+          font-size: 20px;
+          font-weight: 600;
+          color: $black-color;
+          margin-bottom: 15px;
+          margin-top: 20px;
+          padding-left: 10px;
+        }
+        .description {
+          font-size: 12px;
+          font-weight: 600;
+          color: #aab0bc;
+          margin-bottom: 5px;
+          text-transform: uppercase;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .wave {
+    width: 100%;
+  }
+}
